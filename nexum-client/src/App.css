@@ -9,6 +9,7 @@
 }
 
 .Left-column {
+  position: sticky;
   width: 25%;
   z-index: 1;
   box-sizing: border-box;
@@ -25,6 +26,7 @@
 }
 
 .Right-column {
+  position: sticky;
   width: 25%;
   z-index: 1;
   box-sizing: border-box;

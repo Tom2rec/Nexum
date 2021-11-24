@@ -1,0 +1,9 @@
+#body {
+  background: blue;
+  height: 100%;
+  overflow: scroll;
+}
+
+.recommendation-box {
+  width: 200px;
+}
