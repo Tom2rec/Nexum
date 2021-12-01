@@ -1,17 +1,11 @@
 package com.io.nexum.payload.request;
 
-import com.io.nexum.model.po.BoundedConnection;
-import com.io.nexum.model.po.Role;
 import lombok.Data;
 
-import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDate;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Data
