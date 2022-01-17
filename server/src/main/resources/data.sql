@@ -1,3 +1,4 @@
+
 INSERT into roles
 (role)
 values
@@ -18,8 +19,7 @@ insert into user_roles
 values
     (1,1),
     (2,1),
-    (3,1),
-    (4,1)
+    (3,1);
 
 
 INSERT INTO activity
@@ -63,4 +63,3 @@ INSERT INTO bounded_connection
 VALUES
     (1, 1),
     (2, 2);
-
