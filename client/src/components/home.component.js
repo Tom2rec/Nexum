@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 
 import UserService from "../services/user.service";
+import FriendComponent from "./home/friend.component";
+import ActivityComponent from "./home/activity.component";
 
 export default class Home extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      content: []
+      recentActivity: [],
+      friends: [],
+      recommendation: []
     };
   }
 
@@ -15,7 +19,9 @@ export default class Home extends Component {
     UserService.getBoard().then(
       response => {
         this.setState({
-          content: response.data
+            recentActivity: response.data['recentActivity'],
+            friends: response.data['friends'],
+            recommendation: response.data['recommendations']
         });
       },
       error => {
@@ -31,11 +37,23 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="container">
-        <header className="jumbotron">
-          <div>{this.state.content.recentActivity}</div>
-        </header>
-      </div>
+            <div className=" row justify-content-between" style={{width: "100%"}}>
+                <div className="col-8">
+                    <h2>Your recent activity</h2>
+                    <div>
+                        <ActivityComponent activity = {this.state.recentActivity}/>
+                    </div>
+                    <h2>Recommendation</h2>
+                    <div >
+                        <ActivityComponent activity = {this.state.recommendation}/>
+                    </div>
+                </div>
+
+                <div className="col-2">
+                    <h3>Meet people</h3>
+                    <FriendComponent friends = {this.state.friends}/>
+                </div>
+            </div>
     );
   }
 }

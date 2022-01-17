@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.navbar-nav {
+  margin-left: auto;
+}
+
+.left{
+  font-weight: bold;
+}
+
+h2, h3{
+  text-align: center;
+  padding-top: 20px;
+}
+.card-deck{
+  margin-bottom: 50px;
+}
