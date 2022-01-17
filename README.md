@@ -25,22 +25,45 @@ FLUSH PRIVILEGES;
 ```
 
 ### Application
+
+#### 1. Clone repo
+```bash
+git clone git@github.com:Tom2rec/Nexum.git
+```
+
+#### 2. Run server
+
+
 In case you want some example data
 
-on the **only** first run
+during the **only** first run
 
-1. open:
+2.1 open:
 
 ```bash
 server/src/main/resources/application.properties
 ```
 
-2. find line 14 and uncomment it
+2.2 find line 14 and uncomment it
 ```bash
 13 to run initial data.sql uncomment this line
 14 #spring.sql.init.mode=always
 ```
-3. run application
-4. comment this line
+2.3. run application
+```bash
+    cd Nexum/server
+    mvn clean install
+```
+
+2.4. comment that line
+
+#### 3. Launch client
+```bash
+    cd ../client
+    npm install
+    npm start
+```
+
+#### 4. Point your brower to localhost:8081
 
 
