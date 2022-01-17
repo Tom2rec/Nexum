@@ -43,3 +43,4 @@ server/src/main/resources/application.properties
 3. run application
 4. comment this line
 
+

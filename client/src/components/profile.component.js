@@ -21,11 +21,6 @@ export default class Profile extends Component {
           </h3>
         </header>
         <p>
-          <strong>Token:</strong>{" "}
-          {currentUser.token.substring(0, 20)} ...{" "}
-          {currentUser.token.substr(currentUser.token.length - 20)}
-        </p>
-        <p>
           <strong>Id:</strong>{" "}
           {currentUser.id}
         </p>
@@ -36,7 +31,12 @@ export default class Profile extends Component {
         <strong>Authorities:</strong>
         <ul>
           {currentUser.roles &&
-            currentUser.roles.map((role, index) => <li key={index}>{role}</li>)}
+            currentUser.roles.map((role, index) => {
+                if (role === "ROLE_USER")
+                    return <li key={index}>Regular User</li>
+                if (role === "ROLE_HOST")
+                    return <li key={index}>Host</li>
+            })}
         </ul>
       </div>
     );

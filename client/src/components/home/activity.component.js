@@ -22,14 +22,14 @@ export default class ActivityComponent extends Component {
                             {Object.keys(activity).map((key) => {
                                 if (key === 'location')
                                     return Object.keys(activity['location']).map((key) => {
-                                        if (key === 'id' || key === 'locationName' || key === 'numberOfPeople' || key === 'category' ||key === 'name' )
+                                        if (key === 'id' || key === 'locationName' || key === 'numberOfPeople' || key === 'category' || key === 'name')
                                             return;
-                                        if (key === 'address' )
+                                        if (key === 'address')
                                             return <div id={key + activity['id']} className="container">
                                                 <span className="left"><br/>Address</span>
                                                 <span className="right"><br/>
                                                     {activity['location']['address']}
-                                                    {" ul. "+ activity['location']['locationName']}
+                                                    {" ul. " + activity['location']['locationName']}
                                                 </span>
                                                 <br/>
                                             </div>
@@ -48,7 +48,7 @@ export default class ActivityComponent extends Component {
                                                 <span className="left"><br/>Activity</span>
                                                 <span className="right"><br/>
                                                     {activity['activity']['name']}
-                                                    {" for "+ activity['location']['numberOfPeople'] + " people"}
+                                                    {" for " + activity['location']['numberOfPeople'] + " people"}
                                                 </span>
                                                 <br/>
                                             </div>
@@ -58,7 +58,7 @@ export default class ActivityComponent extends Component {
                                             <br/>
                                         </div>
                                     });
-                                if (key === 'name' || key === 'id' )
+                                if (key === 'name' || key === 'id')
                                     return;
                                 if (key === 'timeStart')
                                     return <div id={key + activity['id']} className="container">
@@ -90,9 +90,14 @@ export default class ActivityComponent extends Component {
                                 <br/>
                                 <a className="btn btn-primary" data-toggle="collapse"
                                    href={"#collapse" + activity['id']}
-                                   role="button" aria-expanded="false" aria-controls="collapseExample">
+                                   role="button" aria-expanded="false" aria-controls="collapseExample" style={{margin: "5px"}}>
                                     additional info
                                 </a>
+                                {this.props.isRecommendation &&
+                                <a className="btn btn-primary"
+                                   href={"/recommendation/" + activity['id']}>
+                                    Open
+                                </a>}
                             </p>
                         </div>
                     </div>
