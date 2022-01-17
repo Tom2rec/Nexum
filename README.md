@@ -65,6 +65,6 @@ server/src/main/resources/application.properties
     npm start
 ```
 
-#### 4. Point your brower to localhost:8081
+#### 4. Point your brower to localhost:8081/login
 
 
