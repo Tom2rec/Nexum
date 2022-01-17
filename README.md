@@ -53,13 +53,14 @@ server/src/main/resources/application.properties
 ```bash
     cd Nexum/server
     mvn clean install
+    java -jar target/nexum-0.0.1-SNAPSHOT.jar 
 ```
 
 2.4. comment that line
 
 #### 3. Launch client
 ```bash
-    cd ../client
+    cd Nexum/client
     npm install
     npm start
 ```
